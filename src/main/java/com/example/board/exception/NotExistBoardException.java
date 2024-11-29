@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 public class NotExistBoardException extends AbstractException{
     @Override
     public int getStatusCode() {
-        return HttpStatus.BAD_REQUEST.value();
+        return HttpStatus.NOT_FOUND.value();
     }
 
     @Override
