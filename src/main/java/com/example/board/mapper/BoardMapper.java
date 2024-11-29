@@ -12,4 +12,10 @@ public interface BoardMapper {
     void save(Board board);
     void update(Board board);
     void deleteById(Long id);
+    void increaseViewCount(Long id);
+    Long findFirstEmptyId();
+    void resetSequence();
+    int getCount();
+    Long getMaxId();
+    void deleteByUserId(Long userId);
 }

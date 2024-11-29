@@ -11,12 +11,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ResponseBoardDto {
+public class ResponseBoardListDto {
     private Long id;
-    private Long userId;
     private String title;
-    private String content;
     private LocalDateTime createdAt;
     private int viewCount;
-
 }
+
+
