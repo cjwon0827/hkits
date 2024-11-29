@@ -4,6 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.board.mapper.UserMapper">
+    <select id="findById" parameterType="Long" resultType="com.example.board.domain.User">
+        SELECT id, email, password, role, created_at, updated_at
+        FROM users
+        WHERE id = #{id}
+    </select>
+
     <select id="findByEmail" parameterType="String" resultType="com.example.board.domain.User">
         SELECT id, email, password, role, created_at, updated_at
         FROM users
@@ -20,4 +26,9 @@
         INSERT INTO users (email, password, role, created_at, updated_at)
         VALUES (#{email}, #{password}, #{role}, #{createdAt}, #{updatedAt})
     </insert>
+
+    <delete id="deleteById" parameterType="Long">
+        DELETE FROM users
+        WHERE id = #{id}
+    </delete>
 </mapper>
